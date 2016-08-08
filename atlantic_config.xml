@@ -80,6 +80,7 @@
 			<include-contents>
 				<include-content>Trump</include-content>
 			</include-contents>
+			<highlight-contents>NEWS BRIEF</highlight-contents>
 		</section>
 		<section>
 			<name>The Atlantic</name>
