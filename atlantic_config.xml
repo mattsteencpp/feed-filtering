@@ -1,0 +1,94 @@
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+	<feed-url>http://feeds.feedburner.com/TheAtlantic</feed-url>
+	<item-selector>//xmlns:entry</item-selector>
+	<directory>/var/www/html/feeds/the_atlantic_monthly</directory>
+	<feed-filename>/home/ubuntu/feeds_control/the_atlantic/the_atlantic_feed</feed-filename>
+	<sections>
+		<section>
+			<name>Excluded</name>
+			<filename>excluded.xml</filename>
+			<include-titles>
+				<include-title>Politics &amp; Policy Daily</include-title>
+				<include-title>What We&apos;re Following</include-title>
+				<include-title>Track of the Day</include-title>
+				<include-title>Cheat Sheet</include-title>
+				<include-title>Quoted</include-title>
+				<include-title>&lt;em&gt;The Atlantic&lt;/em&gt; Daily:</include-title>
+				<include-title>A Clinton-Scandal Primer</include-title>
+				<include-title>The Big Stories This Week</include-title>
+				<include-title>The Week in Pop-Culture Writing</include-title>
+				<include-title>The Week in Global Affairs Writing</include-title>
+				<include-title>Photos of the Week</include-title>
+				<include-title>Week in Culture</include-title>
+				<include-title>The Week in Global-Affairs Writing</include-title>
+				<include-title>By Heart</include-title>
+			</include-titles>
+			<include-contents>
+				<include-content>A&amp;Q</include-content>
+			</include-contents>
+			<include-authors>
+			</include-authors>
+		</section>
+		<section>
+			<name>Conor Friedersdorf</name>
+			<filename>conor_friedersdorf.xml</filename>
+			<include-authors>
+				<include-author>Conor Friedersdorf</include-author>
+			</include-authors>
+		</section>
+		<section>
+			<name>Ta-Nahesi Coates</name>
+			<filename>ta-nahesi_coates.xml</filename>
+			<include-authors>
+				<include-author>Ta-Nahesi Coates</include-author>
+			</include-authors>
+		</section>
+		<section>
+			<name>James Fallows</name>
+			<filename>james_fallows.xml</filename>
+			<include-authors>
+				<include-author>James Fallows</include-author>
+			</include-authors>
+		</section>
+		<section>
+			<name>Images</name>
+			<filename>images.xml</filename>
+			<include-titles>
+				<include-title>Sage, Ink:</include-title>
+				<include-title>Orbital View</include-title>
+				<include-title>America By Air</include-title>
+				<include-title>Photos</include-title>
+			</include-titles>
+		</section>
+		<section>
+			<name>Notes</name>
+			<filename>notes.xml</filename>
+			<include-titles>
+				<include-title>Cont&apos;d</include-title>
+			</include-titles>
+			<include-links>
+				<include-link>http://www.theatlantic.com/notes</include-link>
+			</include-links>
+		</section>
+		<section>
+			<name>Trump</name>
+			<filename>trump.xml</filename>
+			<include-titles>
+				<include-title>Trump</include-title>
+			</include-titles>
+			<include-contents>
+				<include-content>Trump</include-content>
+			</include-contents>
+		</section>
+		<section>
+			<name>The Atlantic</name>
+			<filename>atlantic_main.xml</filename>
+			<include-all>Yes</include-all>
+			<highlight-contents>NEWS BRIEF</highlight-contents>
+		</section>
+	</sections>
+</root>
+		
+	
+				
