@@ -50,7 +50,7 @@ def does_entry_match_section(entry, section)
 	
 	highlights = section.css('highlight-contents')
 	highlights.each do |highlight|
-		if entry_content.include? highlight
+		if entry_content.include? highlight and not entry_title.include? highlight
 			entry_title = "*** " + highlight + " *** " + entry_title
 			title_object = entry.css('title')
 			title_object[0].content = entry_title
