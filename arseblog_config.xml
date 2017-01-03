@@ -1,7 +1,10 @@
 <!--Note: the latest verison of this file is on the web server... -->
 <root>
 	<feed-url>http://feeds.feedburner.com/arseblog</feed-url>
-	<item-selector>//xmlns:entry</item-selector>
+	<item-selector>//item</item-selector>
+	<feed-selector>//channel</feed-selector>
+	<updated-selector>//lastBuildDate</updated-selector>
+	<stored-update-selector>channel lastBuildDate</stored-update-selector>
 	<directory>/var/www/html/feeds/arseblog</directory>
 	<feed-filename>/home/ubuntu/feeds_control/arseblog/arseblog_feed</feed-filename>
 	<sections>

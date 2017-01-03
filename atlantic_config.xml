@@ -2,6 +2,9 @@
 <root>
 	<feed-url>http://feeds.feedburner.com/TheAtlantic</feed-url>
 	<item-selector>//xmlns:entry</item-selector>
+	<feed-selector>//xmlns:feed</feed-selector>
+	<updated-selector>//xmlns:updated</updated-selector>
+	<stored-update-selector>feed updated</stored-update-selector>
 	<directory>/var/www/html/feeds/the_atlantic_monthly</directory>
 	<feed-filename>/home/ubuntu/feeds_control/the_atlantic/the_atlantic_feed</feed-filename>
 	<sections>

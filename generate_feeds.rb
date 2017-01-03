@@ -100,7 +100,10 @@ max_entries = 20
 # read the input config file
 config = Nokogiri::XML(File.read(ARGV[0]),&:noblanks)
 url = config.css('feed-url').text
-selector = config.css('item-selector').text
+item_selector = config.css('item-selector').text
+feed_selector = config.css('feed-selector').text
+updated_selector = config.css('updated-selector').text
+stored_update_selector = config.css('stored-update-selector').text
 sections = config.css('section')
 feed_filename = config.css('feed-filename').text + Time.now().strftime("_%Y%m%d-%H%M%S.xml")
 if ARGV.length > 2
@@ -117,8 +120,8 @@ File.open(feed_filename, 'w') do |file|
 	file.print feed.to_xml(indent:4)
 end
 
-entries = feed.xpath(selector)
-updated_timestamp = feed.at_xpath("//xmlns:updated").text
+entries = feed.xpath(item_selector)
+updated_timestamp = feed.at_xpath(updated_selector).text
 
 sections.each do |section|
 	filename = directory + "/" + section.css('filename').text
@@ -126,10 +129,10 @@ sections.each do |section|
 	section_data = File.read(filename)
 	doc = Nokogiri::XML.parse(section_data,&:noblanks)
 	
-	section_file_updated = doc.css("feed updated")
+	section_file_updated = doc.css(stored_update_selector)
 	section_file_updated[0].content = updated_timestamp
 	
-	section_nodeset = doc.at_xpath("//xmlns:feed")
+	section_nodeset = doc.at_xpath(feed_selector)
 	
 	found = false
 	puts "Looking for matches for section '" + section.css('name').text + "'"
@@ -137,7 +140,7 @@ sections.each do |section|
 		if does_entry_match_section(entry, section)
 			found = true
 			entry = entries.delete(entry)
-			section_entries = doc.xpath(selector)
+			section_entries = doc.xpath(item_selector)
 			remove_entry_from_section(entry, section_entries)
 			section_nodeset.children.first.add_previous_sibling(entry)
 		end
@@ -147,12 +150,12 @@ sections.each do |section|
 	end
 	puts ""
 	
-	section_entries = doc.xpath(selector)
+	section_entries = doc.xpath(item_selector)
 
 	n_to_delete = section_entries.length - max_entries - 1
 
 	for counter in 0..n_to_delete
-		section_entries = doc.xpath(selector)
+		section_entries = doc.xpath(item_selector)
 		entry = section_entries.last
 		puts "    Deleting old entry '" + entry.css('title').text + "'"
 		entry.remove
