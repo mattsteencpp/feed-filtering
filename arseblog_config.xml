@@ -1,0 +1,33 @@
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+	<feed-url>http://feeds.feedburner.com/arseblog</feed-url>
+	<item-selector>//xmlns:entry</item-selector>
+	<directory>/var/www/html/feeds/arseblog</directory>
+	<feed-filename>/home/ubuntu/feeds_control/arseblog/arseblog_feed</feed-filename>
+	<sections>
+		<section>
+			<name>Excluded</name>
+			<filename>excluded.xml</filename>
+			<include-titles>
+				<include-title>live blog</include-title>
+				<include-title>Arsecast Extra Episode</include-title>
+				<include-title>Arsenal Gentleman&apos;s</include-title>
+				<include-title>Arsecast Episode</include-title>
+			</include-titles>
+			<include-contents>
+			</include-contents>
+			<include-authors>
+			</include-authors>
+			<include-links>
+			</include-links>
+		</section>
+		<section>
+			<name>Arseblog</name>
+			<filename>arseblog_main.xml</filename>
+			<include-all>Yes</include-all>
+		</section>
+	</sections>
+</root>
+		
+	
+				
