@@ -102,8 +102,12 @@ config = Nokogiri::XML(File.read(ARGV[0]),&:noblanks)
 url = config.css('feed-url').text
 selector = config.css('item-selector').text
 sections = config.css('section')
-directory = config.css('directory').text
 feed_filename = config.css('feed-filename').text + Time.now().strftime("_%Y%m%d-%H%M%S.xml")
+if ARGV.length > 2
+	directory = ARGV[1]
+else
+	directory = config.css('directory').text
+end
 
 # read the latest from the feed url
 feed = Nokogiri::XML(open(url),&:noblanks);
