@@ -31,6 +31,11 @@
 			</include-contents>
 			<include-authors>
 			</include-authors>
+			<include-links>
+				<include-link>www.theatlantic.com/education</include-link>
+				<include-link>www.theatlantic.com/video</include-link>
+				<include-link>-review</include-link>
+			</include-links>
 		</section>
 		<section>
 			<name>Conor Friedersdorf</name>
@@ -62,6 +67,9 @@
 				<include-title>America By Air</include-title>
 				<include-title>Photos</include-title>
 			</include-titles>
+			<include-links>
+				<include-link>www.theatlantic.com/photo</include-link>
+			</include-links>
 		</section>
 		<section>
 			<name>Notes</name>
@@ -70,7 +78,7 @@
 				<include-title>Cont&apos;d</include-title>
 			</include-titles>
 			<include-links>
-				<include-link>http://www.theatlantic.com/notes</include-link>
+				<include-link>www.theatlantic.com/notes</include-link>
 			</include-links>
 		</section>
 		<section>
