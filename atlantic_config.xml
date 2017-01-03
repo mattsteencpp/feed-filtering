@@ -23,6 +23,8 @@
 				<include-title>Week in Culture</include-title>
 				<include-title>The Week in Global-Affairs Writing</include-title>
 				<include-title>By Heart</include-title>
+				<include-title>Today&apos;s News</include-title>
+				<include-title>What Do You Know</include-title>
 			</include-titles>
 			<include-contents>
 				<include-content>A&amp;Q</include-content>
@@ -38,10 +40,10 @@
 			</include-authors>
 		</section>
 		<section>
-			<name>Ta-Nahesi Coates</name>
+			<name>Ta-Nehisi Coates</name>
 			<filename>ta-nahesi_coates.xml</filename>
 			<include-authors>
-				<include-author>Ta-Nahesi Coates</include-author>
+				<include-author>Ta-Nehisi Coates</include-author>
 			</include-authors>
 		</section>
 		<section>
