@@ -1,0 +1,33 @@
+steps on development server:
+	create directory in ~/projects/ruby
+	download existing feed here
+	remove all posts and copy resulting feed into 2 files: main file and excluded.xml
+		it may be worth saving one or more posts as examples
+	determine 5 critical xml selectors - example: item, channel, build date, channel build date, feedburner:origLink
+	copy simple config file and update
+		set feed url
+		set critical selectors
+		set directory
+		set feed filename (without extension)
+		update criteria for exclusion
+		update title of main section
+	to test:
+		update test_generate.sh by adding another job to execute
+		create the directory for the feed filename and set its permissions to 777
+		create a local directory in /var/www/html and set its permissions to 777
+		copy empty feed files into that new directory
+	update generate_feeds.sh by adding another job to execute
+	update copy_files.sh to send the newly create files as part of new deployments
+	commit all changes and new files to git
+	push changes to github (git push origin master)
+	to deploy files to the server, run copy_files.sh
+
+TODO:
+	consider updating copy_files.sh to use git to determine which files to send...
+
+steps on remote server:
+	create directory for new feed files in /var/www/html
+	change the owner to ubuntu:ubuntu
+	copy empty xml files to seed the directory
+	run generate_feeds.sh to test the process
+	
