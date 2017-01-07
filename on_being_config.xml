@@ -1,0 +1,36 @@
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+	<feed-url>http://www.onbeing.org/podcasts/podcast.xml</feed-url>
+	<max-entries>0</max-entries>
+	<item-selector>//item</item-selector>
+	<item-link-selector>guid</item-link-selector>
+	<item-id-selector>guid</item-link-selector>
+	<feed-selector>//channel</feed-selector>
+	<updated-selector>//lastBuildDate</updated-selector>
+	<stored-update-selector>channel lastBuildDate</stored-update-selector>
+	<directory>/var/www/html/podcasts/on_being</directory>
+	<feed-filename>/home/ubuntu/feeds_control/on_being/on_being_feed</feed-filename>
+	<sections>
+		<section>
+			<name>Excluded</name>
+			<filename>excluded.xml</filename>
+			<include-titles>
+				<include-title>Unedited</include-title>
+			</include-titles>
+			<include-contents>
+			</include-contents>
+			<include-authors>
+			</include-authors>
+			<include-links>
+			</include-links>
+		</section>
+		<section>
+			<name>On Being</name>
+			<filename>on_being.xml</filename>
+			<include-all>Yes</include-all>
+		</section>
+	</sections>
+</root>
+		
+	
+				
