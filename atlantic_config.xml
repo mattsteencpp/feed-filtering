@@ -1,7 +1,10 @@
 <!--Note: the latest verison of this file is on the web server... -->
 <root>
 	<feed-url>http://feeds.feedburner.com/TheAtlantic</feed-url>
+	<max-entries>20</max-entries>
 	<item-selector>//xmlns:entry</item-selector>
+	<item-link-selector>feedburner|origLink</item-link-selector>
+	<item-id-selector>id</item-link-selector>
 	<feed-selector>//xmlns:feed</feed-selector>
 	<updated-selector>//xmlns:updated</updated-selector>
 	<stored-update-selector>feed updated</stored-update-selector>
