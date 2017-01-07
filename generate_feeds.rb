@@ -1,25 +1,10 @@
 # basic plan: filter input feed into multiple subfeeds and exclude some entries entirely
 # read from config file to make it easy to update
-# config file will consist of sections, and each section will have inclusion by title, author, or content
-
-# still need to add more new feeds and filters
-# excluded entries:
-#    The Atlantic:
-#        James Fallows beer updates (not clear how to best identify these...)
-#    Lifehacker:
-#        apple-related (how to best identify? tags?)
-#     Krugman
-#         Friday Night Music
-#     Arseblog
-#         Gentleman's Weekly Review
-#         Podcast links
-#         Live blog (or whatever it's called)
+# config file will consist of sections, and each section will have inclusion by title, author, content, etc.
 
 # deployment:
-#     have this ruby script running on the web server every N minutes for each feed (Atlantic, Lifehacker, etc)
+#     have this ruby script running on the web server every N minutes for each feed
 #     xml files to be updated will be the public-facing xml files...
-#     idea - also save a timestamped version for debugging in another location
-#     probably won't need Ruby on Rails after all...
 
 require 'nokogiri'
 require 'open-uri'
@@ -29,10 +14,10 @@ require 'open-uri'
 ############################################
 
 # if an entry with the same id already exists in the section, it has been updated, so remove the old version
-def remove_entry_from_section(entry, section_entries)
-	id = entry.css("id").text
+def remove_entry_from_section(item_id_selector, entry, section_entries)
+	id = entry.css(item_id_selector).text
 	section_entries.each do |s_entry|
-		s_id = s_entry.css("id").text
+		s_id = s_entry.css(item_id_selector).text
 		if s_id == id
 			s_entry.remove
 			return true
@@ -42,11 +27,11 @@ def remove_entry_from_section(entry, section_entries)
 end
 
 # returns true if the entry matches any of the settings in the config file
-def does_entry_match_section(entry, section)
+def does_entry_match_section(entry, section, item_link_selector)
 	entry_author = entry.css('author name').text
 	entry_title = entry.css('title').text
 	entry_content = entry.css('content').text
-	entry_link = entry.css('feedburner|origLink').text
+	entry_link = entry.css(item_link_selector).text
 	
 	highlights = section.css('highlight-contents')
 	highlights.each do |highlight|
@@ -95,12 +80,13 @@ end
 
 ############################################
 
-max_entries = 20
-
 # read the input config file
 config = Nokogiri::XML(File.read(ARGV[0]),&:noblanks)
 url = config.css('feed-url').text
+max_entries = config.css('max-entries').text.to_i
 item_selector = config.css('item-selector').text
+item_link_selector = config.css('item-link-selector').text
+item_id_selector = config.css('item-id-selector').text
 feed_selector = config.css('feed-selector').text
 updated_selector = config.css('updated-selector').text
 stored_update_selector = config.css('stored-update-selector').text
@@ -137,11 +123,11 @@ sections.each do |section|
 	found = false
 	puts "Looking for matches for section '" + section.css('name').text + "'"
 	entries.reverse_each do |entry|
-		if does_entry_match_section(entry, section)
+		if does_entry_match_section(entry, section, item_link_selector)
 			found = true
 			entry = entries.delete(entry)
 			section_entries = doc.xpath(item_selector)
-			remove_entry_from_section(entry, section_entries)
+			remove_entry_from_section(item_id_selector, entry, section_entries)
 			section_nodeset.children.first.add_previous_sibling(entry)
 		end
 	end
@@ -152,18 +138,21 @@ sections.each do |section|
 	
 	section_entries = doc.xpath(item_selector)
 
-	n_to_delete = section_entries.length - max_entries - 1
-
-	for counter in 0..n_to_delete
-		section_entries = doc.xpath(item_selector)
-		entry = section_entries.last
-		puts "    Deleting old entry '" + entry.css('title').text + "'"
-		entry.remove
+	if max_entries > 0
+		n_to_delete = section_entries.length - max_entries - 1
+		
+		for counter in 0..n_to_delete
+			section_entries = doc.xpath(item_selector)
+			entry = section_entries.last
+			puts "    Deleting old entry '" + entry.css('title').text + "'"
+			entry.remove
+		end
 	end
 	
 	# Write the document to disk
 	File.open(filename, 'w') do |file|
 		output = doc.to_xml(indent:4)
+		output.force_encoding 'utf-8'
 		# note: replace "default:" because nokogiri apparently has a bug in handling namespaces
 		file.print output.gsub("default:","")
 	end
