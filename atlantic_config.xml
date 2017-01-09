@@ -15,12 +15,11 @@
 			<name>Excluded</name>
 			<filename>excluded.xml</filename>
 			<include-titles>
-				<include-title>Politics &amp; Policy Daily</include-title>
-				<include-title>What We&apos;re Following</include-title>
+				<include-title>What We're Following</include-title>
 				<include-title>Track of the Day</include-title>
 				<include-title>Cheat Sheet</include-title>
 				<include-title>Quoted</include-title>
-				<include-title>&lt;em&gt;The Atlantic&lt;/em&gt; Daily:</include-title>
+				<include-title>Daily:</include-title>
 				<include-title>A Clinton-Scandal Primer</include-title>
 				<include-title>The Big Stories This Week</include-title>
 				<include-title>The Week in Pop-Culture Writing</include-title>
@@ -29,11 +28,10 @@
 				<include-title>Week in Culture</include-title>
 				<include-title>The Week in Global-Affairs Writing</include-title>
 				<include-title>By Heart</include-title>
-				<include-title>Today&apos;s News</include-title>
+				<include-title>Today's News</include-title>
 				<include-title>What Do You Know</include-title>
 			</include-titles>
 			<include-contents>
-				<include-content>A&amp;Q</include-content>
 			</include-contents>
 			<include-authors>
 			</include-authors>
@@ -107,5 +105,4 @@
 	</sections>
 </root>
 		
-	
-				
+
