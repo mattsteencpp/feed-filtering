@@ -31,6 +31,7 @@ def does_entry_match_section(entry, section, item_link_selector)
 	entry_author = entry.css('author name').text
 	entry_title = entry.css('title').text
 	entry_content = entry.css('content').text
+	entry_description = entry.css('description').text
 	entry_link = entry.css(item_link_selector).text
 	
 	highlights = section.css('highlight-contents')
@@ -65,6 +66,13 @@ def does_entry_match_section(entry, section, item_link_selector)
 	contents.each do |content|
 		if entry_content.include? content
 			puts "    " + entry_title + ": Matched content '" + content + "'"
+			return true
+		end
+	end
+	descriptions = section.css('include-description')
+	descriptions.each do |description|
+		if entry_description.include? description
+			puts "    " + entry_title + ": Matched description '" + description + "'"
 			return true
 		end
 	end
