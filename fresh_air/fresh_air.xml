@@ -1,0 +1,32 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<rss xmlns:npr="http://www.npr.org/rss/" xmlns:nprml="http://api.npr.org/nprml" xmlns:itunes="http://www.itunes.com/dtds/podcast-1.0.dtd" xmlns:content="http://purl.org/rss/1.0/modules/content/" xmlns:dc="http://purl.org/dc/elements/1.1/" version="2.0">
+  <channel>
+    <title>Fresh Air</title>
+    <link>http://www.npr.org/programs/fresh-air/</link>
+    <description><![CDATA[Fresh Air from WHYY, the Peabody Award-winning weekday magazine of contemporary arts and issues, is one of public radio's most popular programs. Hosted by Terry Gross, the show features intimate conversations with today's biggest luminaries.]]></description>
+    <copyright>Copyright 2015 NPR - For Personal Use Only</copyright>
+    <generator>NPR API RSS Generator 0.94</generator>
+    <language>en</language>
+    <itunes:new-feed-url>https://www.npr.org/rss/podcast.php?id=381444908</itunes:new-feed-url>
+    <itunes:summary><![CDATA[Fresh Air from WHYY, the Peabody Award-winning weekday magazine of contemporary arts and issues, is one of public radio's most popular programs. Hosted by Terry Gross, the show features intimate conversations with today's biggest luminaries.]]></itunes:summary>
+    <itunes:subtitle><![CDATA[Fresh Air from WHYY, the Peabody Award-winning weekday magazine of contemporary arts and issues, is one of public radio's most popular programs. Hosted by Terry Gross, the show features intimate conversations with today's biggest luminaries.]]></itunes:subtitle>
+    <itunes:author>NPR</itunes:author>
+    <itunes:block>no</itunes:block>
+    <itunes:owner>
+      <itunes:email/>
+      <itunes:name/>
+    </itunes:owner>
+    <itunes:category text="Arts"/>
+    <itunes:category text="TV &amp; Film"/>
+    <itunes:category text="Literature"/>
+    <itunes:category text="Society &amp; Culture"/>
+    <itunes:image href="https://media.npr.org/images/podcasts/primary/icon_381444908-6388a4123207c734918f15c97de6d49ae634f820.jpg?s=1400"/>
+    <image>
+      <url>https://media.npr.org/images/podcasts/primary/icon_381444908-6388a4123207c734918f15c97de6d49ae634f820.jpg?s=200</url>
+      <title>Fresh Air</title>
+      <link>http://www.npr.org/programs/fresh-air/</link>
+    </image>
+    <lastBuildDate>Mon, 09 Jan 2017 16:00:00 -0500</lastBuildDate>
+  </channel>
+</rss>
+

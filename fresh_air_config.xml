@@ -1,0 +1,39 @@
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+	<feed-url>https://www.npr.org/rss/podcast.php?id=381444908</feed-url>
+	<max-entries>0</max-entries>
+	<item-selector>//item</item-selector>
+	<item-link-selector>link</item-link-selector>
+	<item-id-selector>guid</item-link-selector>
+	<feed-selector>//channel</feed-selector>
+	<updated-selector>//lastBuildDate</updated-selector>
+	<stored-update-selector>channel lastBuildDate</stored-update-selector>
+	<directory>/var/www/html/podcasts/fresh_air</directory>
+	<feed-filename>/home/ubuntu/feeds_control/fresh_air/fresh_air_feed</feed-filename>
+	<sections>
+		<section>
+			<name>Excluded</name>
+			<filename>excluded.xml</filename>
+			<include-titles>
+				<include-title>Best Of:</include-title>
+			</include-titles>
+			<include-contents>
+			</include-contents>
+			<include-descriptions>
+				<include-description>Originally broadcast</include-description>
+			</include-descriptions>
+			<include-authors>
+			</include-authors>
+			<include-links>
+			</include-links>
+		</section>
+		<section>
+			<name>Fresh Air</name>
+			<filename>fresh_air.xml</filename>
+			<include-all>Yes</include-all>
+		</section>
+	</sections>
+</root>
+		
+	
+				

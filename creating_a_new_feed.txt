@@ -3,7 +3,7 @@ steps on development server:
 	download existing feed here
 	remove all posts and copy resulting feed into 2 files: main file and excluded.xml
 		it may be worth saving one or more posts as examples
-	determine 5 critical xml selectors - example: item, channel, build date, channel build date, feedburner:origLink
+	determine 5 critical xml selectors - example: item, channel, lastBuildDate, channel lastBuildDate, feedburner:origLink
 	copy simple config file and update
 		set feed url
 		set critical selectors
