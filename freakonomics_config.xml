@@ -1,0 +1,34 @@
+<?xml version="1.0"?>
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+    <feed-url>http://feeds.feedburner.com/freakonomicsradio</feed-url>
+    <max-entries>0</max-entries>
+    <item-selector>//item</item-selector>
+    <item-link-selector>guid</item-link-selector>
+    <item-id-selector>guid</item-id-selector>
+    <feed-selector>//channel</feed-selector>
+    <updated-selector>//lastBuildDate</updated-selector>
+    <stored-update-selector>channel lastBuildDate</stored-update-selector>
+    <directory>/var/www/html/podcasts/freakonomics</directory>
+    <feed-filename>/home/ubuntu/feeds_control/freakonomics/freakonomics_feed</feed-filename>
+    <sections>
+        <section>
+            <name>Excluded</name>
+            <filename>excluded.xml</filename>
+            <include-titles>
+                <include-title>Rebroadcast</include-title>
+            </include-titles>
+            <include-contents>
+			</include-contents>
+            <include-authors>
+			</include-authors>
+            <include-links>
+			</include-links>
+        </section>
+        <section>
+            <name>Freakonomics</name>
+            <filename>freakonomics.xml</filename>
+            <include-all>Yes</include-all>
+        </section>
+    </sections>
+</root>
