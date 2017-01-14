@@ -3,6 +3,8 @@ steps on development server:
 	download existing feed here
 	remove all posts and copy resulting feed into 2 files: main file and excluded.xml
 		it may be worth saving one or more posts as examples
+		replace the original feed url anywhere it appears in these seed files
+			otherwise, Podcast Addict may redirect the feed url back to the original url
 	determine 5 critical xml selectors - example: item, channel, lastBuildDate, channel lastBuildDate, feedburner:origLink
 	copy simple config file and update
 		set feed url
@@ -12,10 +14,10 @@ steps on development server:
 		update criteria for exclusion
 		update title of main section
 	to test:
-		update test_generate.sh by adding another job to execute
 		create the directory for the feed filename and set its permissions to 777
 		create a local directory in /var/www/html and set its permissions to 777
 		copy empty feed files into that new directory
+		update test_generate.sh by adding another job to execute
 	update generate_feeds.sh by adding another job to execute
 	update copy_files.sh to send the newly create files as part of new deployments
 	commit all changes and new files to git
@@ -24,10 +26,12 @@ steps on development server:
 
 TODO:
 	consider updating copy_files.sh to use git to determine which files to send...
+	consider using rsync or something to avoid copying everything as the list grows...
 
 steps on remote server:
 	create directory for new feed files in /var/www/html
 	change the owner to ubuntu:ubuntu
 	copy empty xml files to seed the directory
 	run generate_feeds.sh to test the process
+	add a line to the sudo crontab to perform log deletion for all the raw feed files!
 	
