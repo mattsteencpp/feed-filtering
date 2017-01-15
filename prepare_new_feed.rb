@@ -34,4 +34,4 @@ FileUtils::chown_R("ubuntu", "ubuntu", directory)
 
 puts "Final step: add log deletion for this feed: "
 puts "    sudo crontab -e"
-puts "    0 * * * * sudo find /home/ubuntu/feeds_control/" + feed_name + " -type f -mtime +5 -delete"
+puts "    0 * * * * sudo find /home/ubuntu/feeds_control/" + feed_name + " -type f -mtime +1 -delete"
