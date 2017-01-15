@@ -17,6 +17,7 @@
             <filename>excluded.xml</filename>
             <include-titles>
                 <include-title>Rebroadcast</include-title>
+                <include-title>REBROADCAST</include-title>
             </include-titles>
             <include-contents>
 			</include-contents>
