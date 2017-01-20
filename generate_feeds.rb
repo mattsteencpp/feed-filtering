@@ -9,6 +9,9 @@
 require 'nokogiri'
 require 'open-uri'
 
+$latest_episode = 0
+$episode_regex = ""
+
 ############################################
 # functions
 ############################################
@@ -24,6 +27,16 @@ def remove_entry_from_section(item_id_selector, entry, section_entries)
 		end
 	end
 	return false
+end
+
+# get the episode number from the title using the episode_regex
+def get_episode_number(entry_title)
+	episode_number = -1
+	result = $episode_regex.match(entry_title)
+	if result
+		episode_number = result[1].to_i
+	end
+	return episode_number
 end
 
 # returns true if the entry matches any of the settings in the config file
@@ -61,6 +74,13 @@ def does_entry_match_section(entry, section, item_link_selector)
 			puts "    " + entry_title + ": Matched title '" + title + "'"
 			return true
 		end
+	end
+	# this one is different: get the regex from the config, apply the regex, and 
+	# if there is a match, compare the capture group to the minimum episode number
+	episode_number = get_episode_number(entry_title)
+	if episode_number > 0 and episode_number < $latest_episode
+		puts "    " + entry_title + ": Predates latest episode '" + $latest_episode.to_s + "'"
+		return true
 	end
 	contents = section.css('include-content')
 	contents.each do |content|
@@ -119,9 +139,15 @@ updated_timestamp = feed.at_xpath(updated_selector).text
 
 sections.each do |section|
 	filename = directory + "/" + section.css('filename').text
+	puts filename
 	
 	section_data = File.read(filename)
 	doc = Nokogiri::XML.parse(section_data,&:noblanks)
+	
+	latest_episode_obj = doc.css('channel latest-episode')
+	
+	$latest_episode = latest_episode_obj.text.to_i
+	$episode_regex = Regexp.new(section.css('include-episode').text)
 	
 	section_file_updated = doc.css(stored_update_selector)
 	section_file_updated[0].content = updated_timestamp
@@ -131,6 +157,10 @@ sections.each do |section|
 	found = false
 	puts "Looking for matches for section '" + section.css('name').text + "'"
 	entries.reverse_each do |entry|
+		episode_number = get_episode_number(entry.css('title').text)
+		if episode_number > $latest_episode
+			$latest_episode = episode_number
+		end
 		if does_entry_match_section(entry, section, item_link_selector)
 			found = true
 			entry = entries.delete(entry)
@@ -143,6 +173,10 @@ sections.each do |section|
 		puts "No matches found!"
 	end
 	puts ""
+	
+	if latest_episode_obj[0]
+		latest_episode_obj[0].content = $latest_episode.to_s
+	end
 	
 	section_entries = doc.xpath(item_selector)
 
