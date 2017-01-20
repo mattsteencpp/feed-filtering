@@ -31,7 +31,8 @@ def get_feed_caption(name)
 end
 
 if ARGV.length != 2
-	puts "The required arguments to this script are the feed name and feed url"
+	puts "This script should be run as root."
+	puts "The required arguments to this script are the feed name and feed url."
 	abort
 end
 
@@ -68,7 +69,7 @@ directory_object = config.css('directory')
 directory = directory_object.text
 directory.gsub! example_feed_name, feed_name
 
-puts "Updating the web directory in the config file and creating it at " + directory + "..."
+puts "Updating the web directory in the config file and creating it at " + directory + " (requires sudo permissions)..."
 directory_object[0].content = directory
 FileUtils::mkdir_p(directory)
 FileUtils::chmod(777, directory)
