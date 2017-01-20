@@ -1,0 +1,36 @@
+<?xml version="1.0"?>
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+    <feed-url>https://www.npr.org/rss/podcast.php?id=510289</feed-url>
+    <max-entries>0</max-entries>
+    <item-selector>//item</item-selector>
+    <item-link-selector>guid</item-link-selector>
+    <item-id-selector>guid</item-id-selector>
+    <feed-selector>//channel</feed-selector>
+    <updated-selector>//lastBuildDate</updated-selector>
+    <stored-update-selector>channel lastBuildDate</stored-update-selector>
+    <directory>/var/www/html/podcasts/planet_money</directory>
+    <feed-filename>/home/ubuntu/feeds_control/planet_money/planet_money_feed</feed-filename>
+    <sections>
+        <section>
+            <name>Excluded</name>
+            <filename>excluded.xml</filename>
+            <include-episodes>
+            	<include-episode>#(\d*):.*</include-episode>
+            </include-episodes>
+            <include-titles>
+            </include-titles>
+            <include-contents>
+			</include-contents>
+            <include-authors>
+			</include-authors>
+            <include-links>
+			</include-links>
+        </section>
+        <section>
+            <name>Planet Money</name>
+            <filename>planet_money.xml</filename>
+            <include-all>Yes</include-all>
+        </section>
+    </sections>
+</root>
