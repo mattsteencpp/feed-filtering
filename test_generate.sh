@@ -3,4 +3,5 @@
 #ruby generate_feeds.rb on_being_config.xml /home/msteen/projects/ruby/on_being
 #ruby generate_feeds.rb fresh_air_config.xml /home/msteen/projects/ruby/fresh_air
 #ruby generate_feeds.rb freakonomics_config.xml /home/msteen/projects/ruby/freakonomics
-ruby generate_feeds.rb planet_money_config.xml /home/msteen/projects/ruby/planet_money
+#ruby generate_feeds.rb planet_money_config.xml /home/msteen/projects/ruby/planet_money
+ruby generate_feeds.rb tal_config.xml /home/msteen/projects/ruby/tal
