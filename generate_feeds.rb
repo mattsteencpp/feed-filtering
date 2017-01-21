@@ -135,7 +135,9 @@ File.open(feed_filename, 'w') do |file|
 end
 
 entries = feed.xpath(item_selector)
-updated_timestamp = feed.at_xpath(updated_selector).text
+if updated_selector.length > 0
+	updated_timestamp = feed.at_xpath(updated_selector).text
+end
 
 sections.each do |section|
 	filename = directory + "/" + section.css('filename').text
@@ -149,8 +151,10 @@ sections.each do |section|
 	$latest_episode = latest_episode_obj.text.to_i
 	$episode_regex = Regexp.new(section.css('include-episode').text)
 	
-	section_file_updated = doc.css(stored_update_selector)
-	section_file_updated[0].content = updated_timestamp
+	if updated_selector.length > 0
+		section_file_updated = doc.css(stored_update_selector)
+		section_file_updated[0].content = updated_timestamp
+	end
 	
 	section_nodeset = doc.at_xpath(feed_selector)
 	
