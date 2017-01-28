@@ -32,6 +32,10 @@ FileUtils::cp(filename, directory)
 FileUtils::chown_R("ubuntu", "ubuntu", directory)
 
 
-puts "Final step: add log deletion for this feed: "
-puts "    sudo crontab -e"
-puts "    0 * * * * sudo find /home/ubuntu/feeds_control/" + feed_name + " -type f -mtime +1 -delete"
+puts "Final steps:"
+puts "    add cron job to execute this feed (stagger with existing jobs!): "
+puts "        crontab -e"
+puts "        * * * * * ruby /home/ubuntu/feeds_control/generate_feeds.rb /home/ubuntu/feeds_control/" + feed_name + "_config.xml > /tmp/" + feed_name + "_feed.txt"
+puts "    add log deletion for this feed: "
+puts "        sudo crontab -e"
+puts "        0 * * * * sudo find /home/ubuntu/feeds_control/" + feed_name + " -type f -mtime +1 -delete"

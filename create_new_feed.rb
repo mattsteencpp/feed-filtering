@@ -150,8 +150,6 @@ puts "        gedit " + feed_name + "_config.xml"
 puts "    Update test_generate.sh to include the new feed:"
 puts "        ruby generate_feeds.rb " + feed_name + "_config.xml /home/msteen/projects/ruby/" + feed_name
 puts "    Test the new feed"
-puts "    Update generate_feeds.sh to include the new feed"
-puts "        ruby /home/ubuntu/feeds_control/generate_feeds.rb /home/ubuntu/feeds_control/" + feed_name + "_config.xml > /tmp/" + feed_name + "_feed.txt"
 puts "    Update copy_files.sh to include the new feed:"
 puts "        scp -i /home/msteen/projects/web/AWSkey2.pem -r /home/msteen/projects/ruby/" + feed_name + " ubuntu@ec2-52-40-89-141.us-west-2.compute.amazonaws.com:/home/ubuntu/feeds_control"
 puts "        scp -i /home/msteen/projects/web/AWSkey2.pem -r /home/msteen/projects/ruby/" + feed_name + "_config.xml ubuntu@ec2-52-40-89-141.us-west-2.compute.amazonaws.com:/home/ubuntu/feeds_control"
