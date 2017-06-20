@@ -3,7 +3,7 @@
 	<feed-url>https://arseblog.com/feed</feed-url>
 	<max-entries>20</max-entries>
 	<item-selector>//item</item-selector>
-	<item-link-selector>feedburner|origLink</item-link-selector>
+	<item-link-selector>link</item-link-selector>
 	<item-id-selector>guid</item-link-selector>
 	<feed-selector>//channel</feed-selector>
 	<updated-selector>//lastBuildDate</updated-selector>
