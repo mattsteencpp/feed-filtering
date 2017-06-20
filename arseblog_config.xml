@@ -1,6 +1,6 @@
 <!--Note: the latest verison of this file is on the web server... -->
 <root>
-	<feed-url>http://feeds.feedburner.com/arseblog</feed-url>
+	<feed-url>https://arseblog.com/feed</feed-url>
 	<max-entries>20</max-entries>
 	<item-selector>//item</item-selector>
 	<item-link-selector>feedburner|origLink</item-link-selector>
