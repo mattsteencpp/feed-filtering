@@ -1,6 +1,6 @@
 <!--Note: the latest verison of this file is on the web server... -->
 <root>
-	<feed-url>http://www.onbeing.org/podcasts/podcast.xml</feed-url>
+	<feed-url>https://www.onbeing.org/podcasts/podcast.xml</feed-url>
 	<max-entries>0</max-entries>
 	<item-selector>//item</item-selector>
 	<item-link-selector>guid</item-link-selector>
