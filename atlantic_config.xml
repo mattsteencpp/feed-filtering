@@ -20,6 +20,7 @@
 				<include-title>Cheat Sheet</include-title>
 				<include-title>Quoted</include-title>
 				<include-title>Daily:</include-title>
+				<include-title>Radio Atlantic</include-title>
 				<include-title>A Clinton-Scandal Primer</include-title>
 				<include-title>The Big Stories This Week</include-title>
 				<include-title>The Week in Pop-Culture Writing</include-title>
@@ -37,6 +38,7 @@
 				<include-content>An Object Lesson</include-content>
 			</include-contents>
 			<include-authors>
+				<include-author>David A. Graham</include-author>
 			</include-authors>
 			<include-links>
 				<include-link>www.theatlantic.com/education</include-link>
