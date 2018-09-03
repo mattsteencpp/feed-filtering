@@ -1,5 +1,4 @@
 <?xml version="1.0"?>
-<!--Note: the latest verison of this file is on the web server... -->
 <root>
     <feed-url>http://feed.thisamericanlife.org/talpodcast</feed-url>
     <max-entries>0</max-entries>
@@ -16,7 +15,7 @@
             <name>Excluded</name>
             <filename>excluded.xml</filename>
             <include-episodes>
-                <include-episode>#(\d*):.*</include-episode>
+                <include-episode>#?(\d*):.*</include-episode>
             </include-episodes>
             <include-titles>
             </include-titles>

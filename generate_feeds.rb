@@ -81,6 +81,8 @@ def does_entry_match_section(entry, section, item_link_selector)
 	if episode_number > 0 and episode_number < $latest_episode
 		puts "    " + entry_title + ": Predates latest episode '" + $latest_episode.to_s + "'"
 		return true
+	else
+		puts "    " + entry_title + ": After latest episode '" + $latest_episode.to_s + "'"
 	end
 	contents = section.css('include-content')
 	contents.each do |content|
