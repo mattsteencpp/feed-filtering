@@ -78,11 +78,13 @@ def does_entry_match_section(entry, section, item_link_selector)
 	# this one is different: get the regex from the config, apply the regex, and 
 	# if there is a match, compare the capture group to the minimum episode number
 	episode_number = get_episode_number(entry_title)
-	if episode_number > 0 and episode_number < $latest_episode
-		puts "    " + entry_title + ": Predates latest episode '" + $latest_episode.to_s + "'"
-		return true
-	else
-		puts "    " + entry_title + ": After latest episode '" + $latest_episode.to_s + "'"
+	if episode_number > 0
+		if episode_number < $latest_episode
+			puts "    " + entry_title + ": Predates latest episode '" + $latest_episode.to_s + "'"
+			return true
+		else
+			puts "    " + entry_title + ": After latest episode '" + $latest_episode.to_s + "'"
+		end
 	end
 	contents = section.css('include-content')
 	contents.each do |content|
