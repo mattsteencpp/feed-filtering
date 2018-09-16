@@ -1,0 +1,86 @@
+<?xml version="1.0"?>
+<!--Note: the latest verison of this file is on the web server... -->
+<root>
+    <feed-url>https://news.ycombinator.com/rss</feed-url>
+    <max-entries>0</max-entries>
+    <item-selector>//item</item-selector>
+    <item-link-selector>link</item-link-selector>
+    <item-id-selector>link</item-id-selector>
+    <feed-selector>//channel</feed-selector>
+    <updated-selector></updated-selector>
+    <stored-update-selector>channel lastBuildDate</stored-update-selector>
+    <directory>/var/www/html/feeds/hacker_news</directory>
+    <feed-filename>/home/ubuntu/feeds_control/hacker_news/hacker_news_feed</feed-filename>
+    <sections>
+        <section>
+            <name>Excluded</name>
+            <filename>excluded.xml</filename>
+            <include-titles>
+                <include-title>Show HN</include-title>
+                <include-title>is hiring</include-title>
+                <include-title>(pdf)</include-title>
+                <include-title>[pdf]</include-title>
+                <include-title>[video]</include-title>
+                <include-title>(2017)</include-title>
+                <include-title>(2016)</include-title>
+                <include-title>(2015)</include-title>
+                <include-title>(2014)</include-title>
+                <include-title>(2013)</include-title>
+                <include-title>(2012)</include-title>
+                <include-title>(2011)</include-title>
+                <include-title>(2010)</include-title>
+                <include-title>(2009)</include-title>
+                <include-title>(2008)</include-title>
+                <include-title>(2007)</include-title>
+                <include-title>(2006)</include-title>
+                <include-title>(2005)</include-title>
+                <include-title>(2004)</include-title>
+                <include-title>(2003)</include-title>
+                <include-title>(2002)</include-title>
+                <include-title>(2001)</include-title>
+                <include-title>(2000)</include-title>
+                <include-title>(1999)</include-title>
+                <include-title>(1998)</include-title>
+                <include-title>(1997)</include-title>
+                <include-title>(1996)</include-title>
+                <include-title>(1995)</include-title>
+                <include-title>(1994)</include-title>
+                <include-title>(1993)</include-title>
+                <include-title>(1992)</include-title>
+                <include-title>(1991)</include-title>
+                <include-title>(1990)</include-title>
+                <include-title>(1989)</include-title>
+                <include-title>(1988)</include-title>
+                <include-title>(1987)</include-title>
+                <include-title>(1986)</include-title>
+                <include-title>(1985)</include-title>
+                <include-title>(1984)</include-title>
+                <include-title>(1983)</include-title>
+                <include-title>(1982)</include-title>
+                <include-title>(1981)</include-title>
+                <include-title>(1980)</include-title>
+                <include-title>(1979)</include-title>
+                <include-title>(1978)</include-title>
+                <include-title>(1977)</include-title>
+                <include-title>(1976)</include-title>
+                <include-title>(1975)</include-title>
+                <include-title>(1974)</include-title>
+                <include-title>(1973)</include-title>
+                <include-title>(1972)</include-title>
+                <include-title>(1971)</include-title>
+                <include-title>(1970)</include-title>
+            </include-titles>
+            <include-contents>
+			</include-contents>
+            <include-authors>
+			</include-authors>
+            <include-links>
+			</include-links>
+        </section>
+        <section>
+            <name>Hacker News</name>
+            <filename>hacker_news.xml</filename>
+            <include-all>Yes</include-all>
+        </section>
+    </sections>
+</root>
