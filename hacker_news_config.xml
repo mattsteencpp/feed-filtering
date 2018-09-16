@@ -17,10 +17,12 @@
             <filename>excluded.xml</filename>
             <include-titles>
                 <include-title>Show HN</include-title>
+                <include-title>Ask HN</include-title>
                 <include-title>is hiring</include-title>
                 <include-title>(pdf)</include-title>
                 <include-title>[pdf]</include-title>
                 <include-title>[video]</include-title>
+                <include-title>[audio]</include-title>
                 <include-title>(2017)</include-title>
                 <include-title>(2016)</include-title>
                 <include-title>(2015)</include-title>
