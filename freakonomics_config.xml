@@ -1,13 +1,13 @@
 <?xml version="1.0"?>
 <!--Note: the latest verison of this file is on the web server... -->
 <root>
-    <feed-url>http://feeds.feedburner.com/freakonomicsradio</feed-url>
+    <feed-url>https://rss.art19.com/freakonomics-radio</feed-url>
     <max-entries>0</max-entries>
     <item-selector>//item</item-selector>
     <item-link-selector>guid</item-link-selector>
     <item-id-selector>guid</item-id-selector>
     <feed-selector>//channel</feed-selector>
-    <updated-selector>//lastBuildDate</updated-selector>
+    <updated-selector></updated-selector>
     <stored-update-selector>channel lastBuildDate</stored-update-selector>
     <directory>/var/www/html/podcasts/freakonomics</directory>
     <feed-filename>/home/ubuntu/feeds_control/freakonomics/freakonomics_feed</feed-filename>
